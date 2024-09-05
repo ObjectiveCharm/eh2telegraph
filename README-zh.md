@@ -32,6 +32,7 @@
     3. 配置 IPv6 可以一定程度上缓解针对单 IP 的限流。
 4. 配置部分 Collector 的 Cookie：
     1. 目前只有 exhentai 需要。
+    2. yaml配置中 ipb_member_id项潜在的问题：因为该项值形式为1234567，作为yaml可能被反序列化为正数类型而不是预期的字符串类型，这可能造成程序崩溃，所以应该在config。yml中显式使用 `ipb_member_id: "1234567"` 格式使反序列化正常工作。
 5. KV 配置：
     1. 本项目内置使用了一个缓存服务，可以避免对一个图片集的重复同步。
     2. 请参考 [cloudflare-kv-proxy](https://github.com/ihciah/cloudflare-kv-proxy) 进行部署，并填写至配置文件。
