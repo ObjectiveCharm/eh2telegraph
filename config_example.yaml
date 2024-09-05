@@ -17,6 +17,9 @@ http:
 
 exhentai:
   ipb_pass_hash: xxx
+  # Use explicit String Literal in yaml to make the decoding process without possible errors
+  # For example  
+  # ipb_member_id: "1234567"
   ipb_member_id: xxx
   igneous: xxx
 
