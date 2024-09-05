@@ -31,6 +31,7 @@ This code is only guaranteed to work correctly on MacOS (partial functionality) 
     2. Configure IPv6 to somewhat alleviate the flow restriction for single IP.
 4. Configure cookies for some Collectors.
     1. Currently, only exhentai is required.
+    2. Some potential issue with the field of cookie in yaml: as the ipb_member_id field has a format like 1234567, as yaml it could be decoded to `Integer` type rather tahn `String` type, which it is supposed to be. And it may cause problems and make the program panic. So in config.yml you should better use explicit `ipb_member_id: "1234567"` to make the decoding process work correctly.
 5. KV configuration
     1. This project uses a built-in caching service to avoid repeated synchronization of an image set.
     2. Please refer to [cloudflare-kv-proxy](https://github.com/ihciah/cloudflare-kv-proxy) for deployment and fill in the yaml file.
